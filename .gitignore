@@ -1,0 +1,5 @@
+*.log
+*.swo
+*.swp
+.DS_Store
+.tags
