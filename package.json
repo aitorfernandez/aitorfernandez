@@ -1,0 +1,10 @@
+{
+  "name": "aitorfernandez",
+  "version": "1.0.0",
+  "repository": "git@github.com:aitorfernandez/aitorfernandez.git",
+  "author": "Aitor Fernandez <helloimaitor@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "python3 -m http.server"
+  }
+}
