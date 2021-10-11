@@ -7,10 +7,33 @@
   <link rel="icon" href="data:,">
   <title></title>
   <style>
+  .content {
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+  }
+  .letters {
+    background: white;
+    color: black;
+    mix-blend-mode: screen;
+  }
+  h1 {
+    font-family: sans-serif;
+    font-size: 96px;
+    text-align: center;
+    width: 100%;
+  }
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div class="content">
+    <div id="canvas"></div>
+  </div>
+  <div>
+    <h1 class="letters">Lorem Ipsum</h1>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
   <script src="./sketch.js"></script>
 </body>
