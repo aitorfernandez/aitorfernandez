@@ -1,22 +1,45 @@
+class Circle {
+  constructor(props) {
+    Object.assign(this, props)
+  }
+
+  update() {
+    this.pos.add(this.vel)
+    this.vel.add(this.acc)
+    this.vel.mult(0.9)
+  }
+
+  draw(graphics) {
+    push()
+    translate(this.pos)
+    fill(51)
+    circle(300, 300, 20)
+    pop()
+  }
+}
+
+let circles = []
+
 function setup() {
-  const canvas = createCanvas(400, 400);
+  const w = 960
+  const h = 540
+  const canvas = createCanvas(w, h, P2D)
   canvas.parent('canvas')
-  background(255, 255, 255);
-  stroke(0, 0, 0, 15);
+
+  for (let i = 0; i < 1; i++) {
+    circles.push(new Circle({
+      pos: createVector(0, 0),
+      vel: createVector(random([-1, 0, 1]), random([-1, 1])),
+			acc: createVector(0,0),
+    }))
+  }
+
+  background(255)
 }
 
 function draw() {
-  randomChord();
-}
-
-function randomChord() {
-  let angle1 = random(0, 2 * PI);
-  let xpos1 = 200 + 200 * cos(angle1);
-  let ypos1 = 200 + 200 * sin(angle1);
-
-  let angle2 = random(0, 2 * PI);
-  let xpos2 = 200 + 200 * cos(angle2);
-  let ypos2 = 200 + 200 * sin(angle2);
-
-  line(xpos1, ypos1, xpos2, ypos2);
+  circles.forEach((c) => {
+    c.update()
+    c.draw()
+  })
 }
