@@ -6,14 +6,14 @@ class Circle {
   update() {
     this.pos.add(this.vel)
     this.vel.add(this.acc)
-    this.vel.mult(0.9)
+    this.vel.mult(0.99)
   }
 
   draw(graphics) {
     push()
     translate(this.pos)
-    fill(51)
-    circle(300, 300, 20)
+    noFill()
+    ellipse(0, 0, this.rad, this.rad)
     pop()
   }
 }
@@ -26,12 +26,17 @@ function setup() {
   const canvas = createCanvas(w, h, P2D)
   canvas.parent('canvas')
 
-  for (let i = 0; i < 1; i++) {
-    circles.push(new Circle({
-      pos: createVector(0, 0),
-      vel: createVector(random([-1, 0, 1]), random([-1, 1])),
-			acc: createVector(0,0),
-    }))
+  const grid = random(30, 40)
+
+  for (let x = 0; x < w; x += grid) {
+    for (let y = 0; y < h; y += grid) {
+      circles.push(new Circle({
+        acc: createVector(0, 0),
+        pos: createVector(x, y),
+        rad: random([1, 5, 5, 10, 10, 20, 20, 40, 40, 80]),
+        vel: createVector(random([-1, 0, 1]), random([-1, 1])),
+      }))
+    }
   }
 
   background(255)
