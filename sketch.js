@@ -1,4 +1,4 @@
-class Circle {
+class Particle {
   constructor(props) {
     Object.assign(this, props)
   }
@@ -13,8 +13,17 @@ class Circle {
     push()
     translate(this.pos)
     noFill()
-    ellipse(0, 0, this.rad, this.rad)
+    this.shape(this.rad)
     pop()
+  }
+
+  shape(r) {
+    if (random() < 0.25) {
+      rotate(millis() / 1000)
+      rect(0, 0, r, r)
+    } else {
+      ellipse(0, 0, r, r)
+    }
   }
 }
 
@@ -30,7 +39,7 @@ function setup() {
 
   for (let x = 0; x < w; x += grid) {
     for (let y = 0; y < h; y += grid) {
-      circles.push(new Circle({
+      circles.push(new Particle({
         acc: createVector(0, 0),
         pos: createVector(x, y),
         rad: random([1, 5, 5, 10, 10, 20, 20, 40, 40, 80]),
