@@ -10,7 +10,7 @@ class Particle {
     this.vel.mult(0.999)
 
     if (frameCount === this.blend) {
-      this.color = lerpColor(color(this.color), color(random(colors)), 0.24)
+      this.color = lerpColor(color(this.color), color(randColor()), 0.24)
     }
   }
 
@@ -23,10 +23,14 @@ class Particle {
   }
 }
 
+function randColor() {
+  return randomColor({
+    alpha: random(),
+    format: 'rgba',
+  })
+}
+
 let circles = []
-let colors = randomColor({
-  count: 10,
-})
 
 function setup() {
   const w = 960
@@ -43,7 +47,7 @@ function setup() {
         pos: createVector(x, y),
         rad: random([1, 5, 5, 10, 10, 20, 20, 40, 40, 80]),
         vel: createVector(random([-1, 0, 1]), random([-1, 1])),
-        color: random(colors),
+        color: randColor(),
       }))
     }
   }
