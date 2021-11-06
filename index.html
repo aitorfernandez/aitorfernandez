@@ -19,16 +19,16 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .letters {
-    background: white;
-    color: black;
+  .text {
+    background-color: white;
     mix-blend-mode: screen;
+    padding: 96px 24px;
   }
-  h1 {
+  .text span {
+    color: black;
     font-family: sans-serif;
-    font-size: 96px;
-    text-align: center;
-    width: 100%;
+    font-size: 396px;
+    letter-spacing: .2rem;
   }
   </style>
 </head>
@@ -36,9 +36,9 @@
   <div class="content">
     <div id="canvas"></div>
   </div>
-  <!-- <div> -->
-  <!--   <h1 class="letters">Lorem Ipsum</h1> -->
-  <!-- </div> -->
+  <div class="content text">
+    <span>Hello</span>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js" integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./sketch.js"></script>
