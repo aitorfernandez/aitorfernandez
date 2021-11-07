@@ -6,7 +6,7 @@
   </p>
 </a>
 
-> I'm Aitor, a passionate and polyglot developer 👨‍💻 based in London ☁️ who likes to mix code in creative ways.
+> I'm Aitor, a passionate and polyglot 👨‍💻 developer based in ☁️ London who likes to mix code in creative ways.
 
 <p>
   <a
