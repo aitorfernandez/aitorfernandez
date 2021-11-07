@@ -56,6 +56,11 @@ function setup() {
 }
 
 function draw() {
+  let ms = millis()
+  if (ms < 1500) {
+    return
+  }
+
   noStroke()
 
   circles.forEach((c) => {

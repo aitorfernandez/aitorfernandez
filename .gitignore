@@ -3,5 +3,4 @@
 *.swp
 .DS_Store
 .tags
-fonts
 node_modules
