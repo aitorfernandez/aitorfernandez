@@ -34,7 +34,7 @@ let circles = []
 
 function setup() {
   const w = 960
-  const h = 540
+  const h = 432
   const canvas = createCanvas(w, h, P2D)
   canvas.parent('canvas')
 
